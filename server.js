@@ -22,7 +22,7 @@ if(process.env.NODE_ENVIROMENT === 'development'){
 app.use('/api/v1/transactions', transactions);
 
 if(process.env.NODE_ENVIROMENT === 'production'){
-  app.use(express.static('../client/build'));
+  app.use(express.static('client/build'));
   app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
 }
 
